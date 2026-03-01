@@ -19,6 +19,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // here we are registering the AuthService class as a service that implements the IAuthService interface. This allows us to use dependency injection
 // to inject an instance of AuthService into our controllers or other services that depend on IAuthService.
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IProductService, ProductService>();
 
 
 //conigure JWT authentication
