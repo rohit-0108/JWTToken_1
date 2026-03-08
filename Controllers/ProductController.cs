@@ -18,14 +18,14 @@ namespace JWTToken_1.Controllers
             _productService = productService;
         }
         [HttpGet("GetAll")]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllProducts()
         {
             var products = await _productService.GetAllProducts();
             return Ok(products);
         }
         [HttpGet("{id}")]
-        [Authorize(Roles = "User")]
+        //[Authorize(Roles = "User")]
         public async Task<IActionResult> GetById(int id)
         {
             var product = await _productService.GetProductById(id);
@@ -41,7 +41,7 @@ namespace JWTToken_1.Controllers
             return Ok(createdProduct);
         }
         [HttpPut]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateProduct(Product product)
         {
             var updatedProduct = await _productService.UpdateProduct(product);
